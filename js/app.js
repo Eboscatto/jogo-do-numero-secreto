@@ -35,7 +35,7 @@ function verificarChute() {
         let mensagemTentativas =`você descobriu o número secreto com ${tentativas} ${palavaraTentativa}!` ;
         exibirTextoNaTela("p", mensagemTentativas);
 
-        //Habilita o botão novo jogo quando acertar o número secreto no HTML
+        //Habilita o botão novo jogo quando acertar o número secreto.
         document.getElementById("reiniciar").removeAttribute("disabled");
     }else {
         if (chute > numeroSecreto) {
@@ -47,7 +47,6 @@ function verificarChute() {
         limparCampo();
     }
 }
-
 //Função que gera o número aleatório.
 function gerarNumeroAleatorio() {
     let numeroEscolhido = parseInt(Math.random() * numeroLimite + 1);
@@ -68,12 +67,12 @@ function limparCampo(){
     chute.value = "";
 }
 
-//Função para iniciar um novo jogo após acertar o "chute"
+//Função para iniciar um novo jogo após acertar o "chute".
 function reiniciarJogo(){
     numeroSecreto = gerarNumeroAleatorio();
     limparCampo();
     exibirMensagemInicial();
     tentativas = 1;
-    //Desabilita o botão novo jogo enquanto não acertar o número secreto
+    //Desabilita o botão novo jogo enquanto não acertar o número secreto.
     document.getElementById("reiniciar").setAttribute("disabled", true);
 }
